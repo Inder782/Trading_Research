@@ -29,6 +29,3 @@ After setting up the virtual environment and installing dependencies, you can st
 
 Contributions are welcome! Please fork the repository and submit a pull request.
 
-## License
-
-This project is licensed under the MIT License.
