@@ -2,3 +2,5 @@ pandas
 numpy
 breeze-connect
 python-dotenv
+binance
+black
