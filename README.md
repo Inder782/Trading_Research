@@ -1,7 +1,3 @@
-# Trading_Research
-
-Trading research projects 📊 exploring machine learning models for stocks 💸 and cryptocurrency ⚡️, with insights into market behavior and trends.
-
 ## Project Overview
 
 This repository contains various trading research projects, including:
