@@ -1,5 +1,7 @@
 # Trading_Research
 
+Trading research projects 📊 exploring machine learning models for stocks 💸 and cryptocurrency ⚡️, with insights into market behavior and trends.
+
 ## Project Overview
 
 This repository contains various trading research projects, including:
@@ -28,7 +30,3 @@ After setting up the virtual environment and installing dependencies, you can st
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request.
-
-## License
-
-This project is licensed under the MIT License.
