@@ -1,5 +1,3 @@
-# Trading_Research
-
 ## Project Overview
 
 This repository contains various trading research projects, including:
@@ -28,4 +26,3 @@ After setting up the virtual environment and installing dependencies, you can st
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request.
-
