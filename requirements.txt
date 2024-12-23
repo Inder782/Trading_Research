@@ -4,3 +4,4 @@ breeze-connect
 python-dotenv
 binance
 black
+ccxt
