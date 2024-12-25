@@ -36,7 +36,7 @@ def equity_historical(symbol: str, start: str, end: str, timeframe: str):
 
     final_frame = raw_frame[["datetime", "open", "high", "low", "close", "volume"]]
     # change the column date to stock name
-    final_frame.rename(columns={"datetime": symbol}, inplace=True)
+    final_frame.rename(columns={"datetime": symbol})
 
     return final_frame
 
@@ -63,8 +63,8 @@ def fut_historical(symbol: str, start: str, end: str, timeframe: str, expiry: st
 
 
 symbol = "NIFTY"
-date_start = "01-10-2024"
-date_end = "19-12-2024"
+date_start = "01-10-2006"
+date_end = "25-12-2024"
 timeframe = "1day"  # can be 1minute , 5minute , 30minute, 1 day
 expiry = "26-12-2024"  # if fut
 
