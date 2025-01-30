@@ -11,7 +11,7 @@ def crypto_historical(symbol: str, timeframe: str, start) -> pd.DataFrame:
     # date_modify
     start = datetime.datetime.strptime(start, "%Y-%m-%d").isoformat() + "Z"
 
-    raw_data = exchange.fetch_ohlcv(symbol, timeframe, since=exchange.parse8601(start))
+    raw_data = exchange.fetch_ohlcv(symbol, timeframe, since=exchange.parse8601(start),limit=10000)
 
     # create a pandas dataframe
     data = pd.DataFrame(raw_data)
@@ -30,9 +30,9 @@ def crypto_historical(symbol: str, timeframe: str, start) -> pd.DataFrame:
 
 
 # Fetch historical data
-symbol = "ETH/USD"
+symbol = "ETH/USDT"
 timeframe = "1d"  # Supported: '1m', '5m', '1h', '1d', etc.
-since = "2024-06-24"  # Start date
+since = "2010-01-01"  # Start date
 
 data = crypto_historical(symbol, timeframe, since)
 data.to_csv(f"data_ETH_200_d.csv",index=False)

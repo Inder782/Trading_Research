@@ -5,7 +5,7 @@ import pandas as pd
 from utils.date_time_util import convert_date
 
 load_dotenv()
-
+pd.set_option('display.max_rows', None)
 
 """
 file contains the functions to get equity , futures and options 
@@ -61,14 +61,25 @@ def fut_historical(symbol: str, start: str, end: str, timeframe: str, expiry: st
 
     return final_frame
 
+def option_chain(symbol:str,expiry:str,right:str)->pd.DataFrame:
+    raw_data=breeze.get_option_chain_quotes(stock_code=symbol,
+                    exchange_code="NFO",
+                    product_type="options",
+                    expiry_date=convert_date(expiry),
+                    right="call")
+    raw_frame=pd.DataFrame(raw_data["Success"])
+    final_frame=raw_frame[["strike_price","ltp","open","high","low","expiry_date"]]
+    
+    return final_frame
 
-symbol = "NIFTY"
-date_start = "01-10-2006"
-date_end = "25-12-2024"
-timeframe = "1day"  # can be 1minute , 5minute , 30minute, 1 day
-expiry = "26-12-2024"  # if fut
 
-data = equity_historical(symbol, date_start, date_end, timeframe)
+# symbol = "NIFTY"
+# date_start = "01-10-2006"
+# date_end = "25-12-2024"
+# timeframe = "1day"  # can be 1minute , 5minute , 30minute, 1 day
+# expiry = "26-12-2024"  # if fut
 
-# rename the file and save it
-data.to_csv(f"{symbol}_{date_start}_to_{date_end}_{timeframe}.csv", index=False)
+# data = equity_historical(symbol, date_start, date_end, timeframe)
+
+# # rename the file and save it
+# data.to_csv(f"{symbol}_{date_start}_to_{date_end}_{timeframe}.csv", index=False)
